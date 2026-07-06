@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documents — Recall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ── Sidebar ─────────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="chat.html" class="brand-link" aria-label="Recall home">
+        <svg class="brand-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="8" height="8" rx="2.2" fill="var(--accent)"/>
+          <rect x="12" y="2" width="8" height="8" rx="2.2" fill="var(--accent)" opacity=".5"/>
+          <rect x="2" y="12" width="8" height="8" rx="2.2" fill="var(--accent)" opacity=".4"/>
+          <rect x="12" y="12" width="8" height="8" rx="2.2" fill="var(--accent)" opacity=".18"/>
+        </svg>
+        <span class="brand-name">Recall</span>
+      </a>
+      <a href="chat.html" class="icon-btn" id="new-chat-btn" title="New conversation" aria-label="New conversation">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+          <path d="M6.5 1v11M1 6.5h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <p class="sidebar-section-label">Menu</p>
+
+    <nav class="sidebar-nav" aria-label="Main navigation">
+      <a href="chat.html" class="nav-item" data-page="chat">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M2 2.5h12a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5H4.9l-2.9 2V3a.5.5 0 0 1 .5-.5Z"
+                stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/>
+        </svg>
+        Chat
+      </a>
+      <a href="documents.html" class="nav-item" data-page="documents">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M4 1.5h5.8L13 5.2V14a.5.5 0 0 1-.5.5h-8A.5.5 0 0 1 4 14V2a.5.5 0 0 1 .5-.5Z"
+                stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/>
+          <path d="M9.5 1.5v4H13" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/>
+        </svg>
+        Documents
+      </a>
+      <a href="upload.html" class="nav-item" data-page="upload">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M8 10.5V2.5m0 0L5 5.5m3-3 3 3" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2.5 11.5v1a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-1" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/>
+        </svg>
+        Upload
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="nav-item" id="open-settings" aria-label="Open settings">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="2.25" stroke="currentColor" stroke-width="1.35"/>
+          <path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.1 3.1l1.4 1.4M11.5 11.5l1.4 1.4M12.9 3.1l-1.4 1.4M4.5 11.5l-1.4 1.4"
+                stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/>
+        </svg>
+        Settings
+        <span class="key-dot" id="key-indicator" aria-label="API key status"></span>
+      </button>
+    </div>
+  </aside>
+  <!-- /sidebar -->
+
+  <!-- ── Main content ────────────────────────────────────────── -->
+  <main class="main-content">
+
+    <!-- Mobile topbar -->
+    <div class="page-topbar">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open sidebar">
+        <span></span><span></span><span></span>
+      </button>
+      <span class="page-topbar-title">Documents</span>
+    </div>
+
+    <div class="page-content">
+
+      <div class="page-heading">
+        <h1>Documents</h1>
+        <p>Your indexed knowledge base — everything Recall can search.</p>
+      </div>
+
+      <!-- Docs subheader: count + refresh -->
+      <div class="docs-header">
+        <span class="docs-count" id="doc-count"></span>
+        <button class="btn btn-ghost" id="refresh-btn" title="Refresh list" style="padding: 5px 10px; font-size: 12.5px;">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+            <path d="M2 6.5A4.5 4.5 0 0 1 10.5 3.5M11 6.5A4.5 4.5 0 0 1 2.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M10 1.5v2.5H7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 11V8.5H5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Refresh
+        </button>
+      </div>
+
+      <!-- Loading state -->
+      <div id="docs-loading" class="spinner-wrap" aria-label="Loading documents">
+        <div class="spinner" role="status"></div>
+      </div>
+
+      <!-- Empty state -->
+      <div id="docs-empty" class="empty-state hidden" aria-live="polite">
+        <div class="empty-state-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M6 2h9l5 5v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"
+                  stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M14 2v6h6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>No documents yet</h3>
+        <p>Upload some files and they'll appear here, ready for Recall to search.</p>
+        <a href="upload.html" class="btn btn-primary">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+            <path d="M6.5 9V1.5m0 0L4 4m2.5-2.5L9 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1.5 10v.75A.75.75 0 0 0 2.25 11.5h8.5a.75.75 0 0 0 .75-.75V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          Upload files
+        </a>
+      </div>
+
+      <!-- Document list (populated by JS) -->
+      <div id="doc-list" class="doc-list hidden" role="list" aria-label="Uploaded documents">
+        <!-- Column header -->
+        <div class="doc-list-header" role="row" aria-hidden="true">
+          <span>Name</span>
+          <span>Size</span>
+          <span>Uploaded</span>
+          <span></span>
+        </div>
+        <!-- Rows injected here by documents.js -->
+      </div>
+
+    </div>
+    <!-- /page-content -->
+
+  </main>
+  <!-- /main-content -->
+
+</div>
+<!-- /app-shell -->
+
+<!-- Mobile sidebar backdrop -->
+<div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+<!-- Settings modal -->
+<dialog class="modal" id="settings-modal" aria-label="Settings">
+  <div class="modal-panel">
+    <div class="modal-header">
+      <h2>Settings</h2>
+      <button class="icon-btn" id="close-settings" aria-label="Close settings">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+          <path d="M1 1l11 11M12 1L1 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="field">
+        <label class="field-label" for="api-key-input">API Key</label>
+        <p class="field-hint">
+          Stored locally in your browser. Sent only to your local Recall backend —
+          never to any third party.
+        </p>
+        <div class="key-reveal-wrap" style="margin-top: 8px;">
+          <input
+            type="password"
+            id="api-key-input"
+            class="input"
+            placeholder="sk-ant-…"
+            autocomplete="off"
+            spellcheck="false"
+          >
+          <button class="key-toggle icon-btn" id="toggle-key-visibility" type="button" aria-label="Show API key">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <ellipse cx="7.5" cy="7.5" rx="5.5" ry="3.5" stroke="currentColor" stroke-width="1.3"/>
+              <circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" id="cancel-settings">Cancel</button>
+      <button class="btn btn-primary" id="save-settings">Save key</button>
+    </div>
+  </div>
+</dialog>
+
+<!-- Toast container -->
+<div id="toast-container" class="toast-container" aria-live="assertive" aria-atomic="true"></div>
+
+<script type="module" src="../js/documents.js"></script>
+</body>
+</html>
