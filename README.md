@@ -51,8 +51,8 @@ RECALL/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/recall.git
-cd recall
+git clone https://github.com/Neurova-oximas/Task6.git
+cd Task6
 ```
 
 ### 2. Set up the backend
