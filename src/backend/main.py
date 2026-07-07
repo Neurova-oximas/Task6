@@ -52,7 +52,7 @@ def resolve_key(x_api_key: str | None) -> str:
 @app.post("/chat")
 async def chat(request: ChatRequest, x_api_key: str | None = Header(None)):
     key = resolve_key(x_api_key)
-    answer = rag.query(request.message, api_key=key)
+    answer = rag.query(request.message, conversation_id=request.conversation_id, api_key=key)
     return {"answer": answer}
 
 
