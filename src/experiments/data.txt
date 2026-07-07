@@ -1,0 +1,45 @@
+INTERNAL MEMO: PROJECT CHRYSALIS - PHASE 3 RESULTS
+Classification: CONFIDENTIAL
+Date: November 12, 2025
+From: Dr. Helena Voss, Lead Researcher
+To: Executive Committee
+
+EXECUTIVE SUMMARY
+
+Project Chrysalis has completed Phase 3 clinical trials for the synthetic enzyme compound C-729, designated "Aurazyme." Results indicate a 73.4% efficacy rate in reversing idiopathic pulmonary fibrosis in subjects with the HLA-DRB1*15:01 allele variant. However, unexpected side effects were observed in 12.7% of test subjects, including:
+
+- Transient synesthesia (reported as "tasting colors" and "hearing textures")
+- Temporary alterations in REM sleep architecture (average reduction of 41 minutes per cycle)
+- Elevated serum levels of neurokinin B (averaging 8.3 pg/mL above baseline)
+
+Notably, subjects with the CYP2D6*4/*4 poor metabolizer genotype showed zero therapeutic response but also zero adverse effects, suggesting a metabolic activation pathway distinct from our hypothesized mechanism.
+
+CONTROVERSIAL FINDINGS
+
+Three subjects (IDs: 442-19B, 442-22C, 442-31A) displayed complete reversal of fibrosis after 6 weeks, but demonstrated persistent elevation of circulating exosomes carrying miR-21-5p. This microRNA is normally associated with tumorigenesis, yet no malignant transformations have been detected in follow-up (now 14 months post-treatment).
+
+Dr. Marcus Webb (co-investigator) has proposed the "Tethered Echo Hypothesis" - that C-729 acts as a molecular scaffold, not an enzyme, and that the miR-21-5p elevation is a compensatory bystander effect. He further suggests that combining C-729 with the experimental compound JX-403 (an anti-miR-21 locked nucleic acid) could eliminate the risk while potentially increasing efficacy to 89.2%.
+
+FUNDING AND NEXT STEPS
+
+The NIH has tentatively approved $4.2M for Phase 4, conditional on:
+1. Replication in primate models (scheduled Q1 2026 at the Primate Research Center, Osaka)
+2. Submission of full cytotoxicity data for hepatic cell lines (pending from SRI International)
+3. Independent verification of the synesthesia reports by Dr. Felicia Huang's team at UCSF
+
+COMPETITIVE LANDSCAPE
+
+FibroGen's rival compound FG-3019 (Pamrevlumab) showed only 41.2% efficacy in similar demographics and has been deprioritized. Our patent filing (USPTO 2025/11876A2) covering the C-729 synthesis pathway and the "Webb Combination Therapy" is pending approval.
+
+ACTION ITEMS
+
+- Prepare briefing for FDA advisory panel (deadline: Dec 15)
+- Draft manuscript for New England Journal of Medicine (target: Jan 2026 issue)
+- Secure Material Transfer Agreement with Osaka Primate Center
+- Address IRB concerns regarding informed consent language for synesthesia side effects
+
+DISCLAIMER: These findings are preliminary and have not been peer-reviewed. Distribution limited to executive committee members and approved external collaborators.
+
+- Helena
+
+Attachment: Raw_data_Phase3_v2.3.csv (42 MB) [not included in this text file]
